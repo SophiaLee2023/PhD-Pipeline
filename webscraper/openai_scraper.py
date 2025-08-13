@@ -9,8 +9,8 @@ import csv
 
 # === SETUP ===
 openai.api_key = "teddy9 sent me his API key here like a fool :)"
-input_csv_path = "C:/Users/aidan/Downloads/remaining_r1.csv"
-output_csv_path = "C:/Users/aidan/Downloads/r1_universities_output.csv"
+input_csv_path = "input.csv"
+output_csv_path = "./data/r1_universities.csv"
 batch_size = 1
 temperature = 1
 
