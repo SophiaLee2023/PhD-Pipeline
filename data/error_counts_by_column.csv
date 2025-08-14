@@ -1,0 +1,54 @@
+Column Name,Total Error Count,num_error_404,num_error_500,num_error_403,num_error_406,num_error_410
+Agricultural sciences,18,10,8,0,0,0
+Natural resources and conservation,45,30,12,3,0,0
+Biochemistry and biophysics,79,56,20,2,1,0
+"Biology and biomedical sciences, general",78,50,20,7,1,0
+"Bioinformatics, biostatistics, and computational biology",76,48,24,4,0,0
+"Cellular and developmental biology, and anatomy",80,58,18,3,1,0
+"Ecology, evolutionary biology, and epidemiology",88,59,25,3,1,0
+Genetics and genomics,82,53,24,4,1,0
+Microbiology and immunology,77,55,18,3,1,0
+Molecular biology,71,45,22,3,1,0
+Neurobiology and neurosciences,78,52,21,5,0,0
+Pharmacology and toxicology,55,39,15,1,0,0
+"Physiology, pathology, and cancer biology",79,59,16,4,0,0
+Computer science,70,42,22,6,0,0
+"Aerospace, aeronautical, and astronautical engineering",29,19,7,3,0,0
+Bioengineering and biomedical engineering,68,33,29,6,0,0
+Chemical and petroleum engineering,64,36,25,3,0,0
+"Civil, environmental, and transportation engineering",68,43,19,6,0,0
+Electrical and computer engineering,76,48,24,4,0,0
+Industrial engineering and operations research,35,23,8,4,0,0
+Materials and mining engineering,55,31,22,2,0,0
+Mechanical engineering,66,42,18,6,0,0
+Geological sciences,72,39,25,8,0,0
+"Ocean, marine, and atmospheric sciences",45,21,18,6,0,0
+Nursing science,49,37,9,3,0,0
+Pharmaceutical sciences,32,22,8,2,0,0
+Public health,67,46,15,6,0,0
+Applied mathematics,59,41,16,2,0,0
+Mathematics,74,52,20,2,0,0
+Statistics,75,46,24,5,0,0
+Astronomy and astrophysics,58,30,21,6,1,0
+Chemistry,70,43,23,3,1,0
+Physics,71,39,24,7,1,0
+Clinical psychology,49,30,16,3,0,0
+Counseling and applied psychology,53,45,7,1,0,0
+Research and experimental psychology,65,41,17,7,0,0
+Anthropology,60,39,13,7,1,0
+Economics,70,44,21,4,1,0
+Political science and government,70,41,23,4,1,1
+Public policy analysis,66,47,14,5,0,0
+"Sociology, demography, and population studies",64,37,19,7,1,0
+Business,74,49,20,5,0,0
+Education leadership and administration,61,47,11,3,0,0
+Education research,61,44,14,3,0,0
+Teacher education and teaching fields,72,56,12,4,0,0
+"Education, other",68,51,14,3,0,0
+Letters,65,47,11,7,0,0
+Foreign languages and literature,85,57,23,5,0,0
+History,62,43,12,7,0,0
+Philosophy and religious studies,81,50,23,7,1,0
+Music and performing arts,78,57,13,8,0,0
+Communication,72,47,19,6,0,0
+Public administration and social services,80,54,21,5,0,0
