@@ -3,7 +3,7 @@ import re
 from collections import defaultdict, Counter
 
 # === Load CSV ===
-file_path = './data/r1_universities_output.csv'
+file_path = './data/r1_universities_annotated.csv'
 df = pd.read_csv(file_path)
 
 # Regex to match "INVALID: <number>"
@@ -15,9 +15,11 @@ overall_error_counts = defaultdict(int)
 # ---- Row & column error tracking ----
 row_error_counts = defaultdict(int)
 row_error_breakdown = defaultdict(Counter)
+row_entry_counts = defaultdict(int)  # NEW
 
 col_error_counts = defaultdict(int)
 col_error_breakdown = defaultdict(Counter)
+col_entry_counts = defaultdict(int)  # NEW
 
 # ---- Count filled cells (excluding first column & first row) ----
 filled_cells_count = 0
@@ -26,14 +28,14 @@ filled_cells_count = 0
 row_order_map = {}
 for r_idx, row in df.iterrows():
     row_id = row.iloc[0]
-    row_order_map[row_id] = r_idx  # preserves natural order
+    row_order_map[row_id] = r_idx
 
 # Map original column order (excluding first column)
 col_order_map = {col: idx for idx, col in enumerate(df.columns)}
 
 # ---- Loop through data ----
 for r_idx, row in df.iterrows():
-    row_id = row.iloc[0]  # First column value as identifier
+    row_id = row.iloc[0]
     for col_idx, col in enumerate(df.columns):
         if r_idx == 0 or col_idx == 0:
             continue  # Skip first row and first column
@@ -41,6 +43,8 @@ for r_idx, row in df.iterrows():
         val_str = str(row[col])
         if val_str.strip() != "" and val_str.lower() != "nan":
             filled_cells_count += 1
+            row_entry_counts[row_id] += 1  # Count non-empty for row
+            col_entry_counts[col] += 1     # Count non-empty for column
 
         match = pattern.search(val_str)
         if match:
@@ -69,7 +73,12 @@ all_error_codes = list(overall_df['Error Code'])
 # ---- Row breakdown DataFrame (original CSV order) ----
 row_data = []
 for rid in sorted(row_error_counts, key=lambda x: row_order_map[x]):
-    row_dict = {'Row ID (First Column)': rid, 'Total Error Count': row_error_counts[rid]}
+    row_dict = {
+        'Row ID (First Column)': rid,
+        'Total Error Count': row_error_counts[rid],
+        'Num Entries': row_entry_counts[rid],
+        'Error Rate (%)': round((row_error_counts[rid] / row_entry_counts[rid] * 100) if row_entry_counts[rid] else 0, 2)
+    }
     for code in all_error_codes:
         row_dict[f'num_error_{code}'] = row_error_breakdown[rid][code]
     row_data.append(row_dict)
@@ -78,7 +87,12 @@ row_df = pd.DataFrame(row_data)
 # ---- Column breakdown DataFrame (original CSV order) ----
 col_data = []
 for cname in sorted(col_error_counts, key=lambda x: col_order_map[x]):
-    col_dict = {'Column Name': cname, 'Total Error Count': col_error_counts[cname]}
+    col_dict = {
+        'Column Name': cname,
+        'Total Error Count': col_error_counts[cname],
+        'Num Entries': col_entry_counts[cname],
+        'Error Rate (%)': round((col_error_counts[cname] / col_entry_counts[cname] * 100) if col_entry_counts[cname] else 0, 2)
+    }
     for code in all_error_codes:
         col_dict[f'num_error_{code}'] = col_error_breakdown[cname][code]
     col_data.append(col_dict)
@@ -86,11 +100,11 @@ col_df = pd.DataFrame(col_data)
 
 # ---- Save outputs ----
 overall_df.to_csv('./data/error_counts_overall.csv', index=False)
-row_df.to_csv('./data/error_counts_by_row.csv', index=False)
-col_df.to_csv('./data/error_counts_by_column.csv', index=False)
+row_df.to_csv('./data/error_counts_by_university.csv', index=False)
+col_df.to_csv('./data/error_counts_by_subject.csv', index=False)
 
 print(f"Number of filled cells (excluding first row & column): {filled_cells_count}")
 print("Saved:")
-print(" - ./data/error_counts_overall.csv")
-print(" - ./data/error_counts_by_row.csv")
-print(" - ./data/error_counts_by_column.csv")
+print(" - ./data/statistics/error_counts_overall.csv")
+print(" - ./data/statistics/error_counts_by_university.csv")
+print(" - ./data/statistics/error_counts_by_subject.csv")
