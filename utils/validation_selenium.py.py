@@ -62,12 +62,7 @@ for index, row in df.iterrows():
             # print(f'\tValid URL: {is_valid_url(url)}')
             noted_urls.append(url)
 
-        df.at[index, col] = str(noted_urls)
-
-# url1: str = 'https://agriculture.auburn.edu/directory/'
-# url2: str = 'https://www.engr.colostate.edu/sbme/directory'
-# url3: str = 'https://political-science.uchicago.edu/people/department-leadership'
-# print(is_valid_url(url3))
+        df.at[index, col] = noted_urls
 
 driver.quit()
     

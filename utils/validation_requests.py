@@ -46,7 +46,7 @@ for index, row in df.iterrows():
         url_list: list = ast.literal_eval(value)
         
         if col.lower() == 'university':
-            df.at[index, col] = url_list[0].title()
+            df.at[index, col] = url_list[0]
         else:
             noted_urls: list = []
             
@@ -55,7 +55,7 @@ for index, row in df.iterrows():
                     noted_urls.append('INVALID')
                 
                 noted_urls.append(url)
-            df.at[index, col] = str(noted_urls)
+            df.at[index, col] = noted_urls
     
 df.to_csv('./data/r1_universities_marked.csv', index=False)
 print('Data successfully written to CSV')
