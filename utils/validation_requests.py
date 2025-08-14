@@ -25,29 +25,37 @@ def get_status_code(url: str) -> int:
         return response.status_code
     
     except Exception as err:
-        print(f'\t{err}')
+        # print(f'\t{err}')
+        pass
     return 500
 
 def is_valid_url(url: str) -> bool:
     result: int = get_status_code(url)
-    print(f'\tResult: {result}')
+    
+    # print(f'\tResult: {result}')
     return result < 400
 
 for index, row in df.iterrows():
+    print(f'Finished row: {index}')
+    
     for col, value in row.items():
-        print(f'Row: {index}, {col.title()}, {value}')
-        
+        # print(f'Row: {index}, {col.title()}, {value}')
         if not isinstance(value, str):
             continue
         
-        noted_urls: list = []
+        url_list: list = ast.literal_eval(value)
         
-        for url in ast.literal_eval(value):
-            if not is_valid_url(url):
-                noted_urls.append('INVALID')
+        if col.lower() == 'university':
+            df.at[index, col] = url_list[0].title()
+        else:
+            noted_urls: list = []
             
-            noted_urls.append(url)
-        df.at[index, col] = str(noted_urls)
-        
-df.to_csv('./data/r1_universities_clean.csv', index=False)
+            for url in url_list:
+                if not is_valid_url(url):
+                    noted_urls.append('INVALID')
+                
+                noted_urls.append(url)
+            df.at[index, col] = str(noted_urls)
+    
+df.to_csv('./data/r1_universities_marked.csv', index=False)
 print('Data successfully written to CSV')
