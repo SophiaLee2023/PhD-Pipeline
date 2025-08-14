@@ -29,7 +29,9 @@ def get_status_code(url: str) -> int:
     return False
 
 def is_valid_url(url: str) -> bool:
-    return get_status_code(url) < 400
+    result: int = get_status_code(url)
+    print(f'\tResult: {result}')
+    return result < 400
 
 for index, row in df.iterrows():
     for col, value in row.items():
@@ -44,9 +46,7 @@ for index, row in df.iterrows():
             if not is_valid_url(url):
                 noted_urls.append('INVALID')
             
-            print(f'\tResult: {get_status_code(url)}')
             noted_urls.append(url)
-                
         df.at[index, col] = str(noted_urls)
         
 df.to_csv('./data/r1_universities_clean.csv', index=False)
