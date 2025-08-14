@@ -42,11 +42,8 @@ def is_valid_url(url: str) -> bool:
         logs: list = driver.get_log('performance')
         return get_status_code(logs, url) < 400
     
-    except AttributeError:
-        print('\tAttributeError: Invalid link')
     except Exception as err:
-        print(f'\t{err}')
-        
+        print(f'\t{err}')    
     return False
 
 for index, row in df.iterrows():

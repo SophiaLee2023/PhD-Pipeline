@@ -24,20 +24,30 @@ def get_status_code(url: str) -> int:
         response = session.get(url, allow_redirects=True, timeout=5)
         return response.status_code
     
-    except AttributeError:
-        print('\tError: Invalid link')
     except Exception as err:
         print(f'\t{err}')
-        
     return False
 
-def is_valid_link(url: str) -> bool:
+def is_valid_url(url: str) -> bool:
     return get_status_code(url) < 400
 
 for index, row in df.iterrows():
     for col, value in row.items():
         print(f'Row: {index}, {col.title()}, {value}')
         
-        if isinstance(value, str):
-            for url in ast.literal_eval(value):
-                print(f'\tResult: {get_status_code(url)}')
+        if not isinstance(value, str):
+            continue
+        
+        noted_urls: list = []
+        
+        for url in ast.literal_eval(value):
+            if not is_valid_url(url):
+                noted_urls.append('INVALID')
+            
+            print(f'\tResult: {get_status_code(url)}')
+            noted_urls.append(url)
+                
+        df.at[index, col] = str(noted_urls)
+        
+df.to_csv('./data/r1_universities_clean.csv', index=False)
+print('Data successfully written to CSV')
