@@ -31,11 +31,10 @@ def get_status_code(url: str) -> int:
 def is_valid_url(url: str) -> bool:
     return get_status_code(url) < 400
 
-for index, row in df.iterrows():
-    print(f'Finished row {index}')
+for col in df.columns:
+    print(f'Finished column: {col.title()}')
     
-    for col, value in row.items():
-        # print(f'Row: {index}, {col.title()}, {value}')
+    for index, value in df[col].items():
         if not isinstance(value, str):
             continue
         
