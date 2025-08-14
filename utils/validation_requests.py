@@ -26,7 +26,7 @@ def get_status_code(url: str) -> int:
     
     except Exception as err:
         print(f'\t{err}')
-    return False
+    return 404
 
 def is_valid_url(url: str) -> bool:
     result: int = get_status_code(url)
