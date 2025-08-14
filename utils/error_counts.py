@@ -67,6 +67,12 @@ overall_df = pd.DataFrame(
     columns=['Error Code', 'Count']
 )
 
+# Add a total entries row at the top
+overall_df = pd.concat([
+    pd.DataFrame([{'Error Code': 'Total Entries', 'Count': filled_cells_count}]),
+    overall_df
+], ignore_index=True)
+
 # ---- Get all unique error codes in appearance order from overall_df ----
 all_error_codes = list(overall_df['Error Code'])
 

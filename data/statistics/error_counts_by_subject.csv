@@ -1,54 +1,54 @@
-Column Name,Total Error Count,Num Entries,Error Rate (%),num_error_404,num_error_500,num_error_403,num_error_406,num_error_410
-Agricultural sciences,18,44,40.91,10,8,0,0,0
-Natural resources and conservation,45,106,42.45,30,12,3,0,0
-Biochemistry and biophysics,79,144,54.86,56,20,2,1,0
-"Biology and biomedical sciences, general",78,152,51.32,50,20,7,1,0
-"Bioinformatics, biostatistics, and computational biology",76,113,67.26,48,24,4,0,0
-"Cellular and developmental biology, and anatomy",80,127,62.99,58,18,3,1,0
-"Ecology, evolutionary biology, and epidemiology",88,138,63.77,59,25,3,1,0
-Genetics and genomics,82,133,61.65,53,24,4,1,0
-Microbiology and immunology,77,125,61.6,55,18,3,1,0
-Molecular biology,71,135,52.59,45,22,3,1,0
-Neurobiology and neurosciences,78,133,58.65,52,21,5,0,0
-Pharmacology and toxicology,55,103,53.4,39,15,1,0,0
-"Physiology, pathology, and cancer biology",79,113,69.91,59,16,4,0,0
-Computer science,70,159,44.03,42,22,6,0,0
-"Aerospace, aeronautical, and astronautical engineering",29,64,45.31,19,7,3,0,0
-Bioengineering and biomedical engineering,68,125,54.4,33,29,6,0,0
-Chemical and petroleum engineering,64,112,57.14,36,25,3,0,0
-"Civil, environmental, and transportation engineering",68,125,54.4,43,19,6,0,0
-Electrical and computer engineering,76,140,54.29,48,24,4,0,0
-Industrial engineering and operations research,35,77,45.45,23,8,4,0,0
-Materials and mining engineering,55,96,57.29,31,22,2,0,0
-Mechanical engineering,66,138,47.83,42,18,6,0,0
-Geological sciences,72,138,52.17,39,25,8,0,0
-"Ocean, marine, and atmospheric sciences",45,90,50.0,21,18,6,0,0
-Nursing science,49,104,47.12,37,9,3,0,0
-Pharmaceutical sciences,32,46,69.57,22,8,2,0,0
-Public health,67,119,56.3,46,15,6,0,0
-Applied mathematics,59,124,47.58,41,16,2,0,0
-Mathematics,74,160,46.25,52,20,2,0,0
-Statistics,75,137,54.74,46,24,5,0,0
-Astronomy and astrophysics,58,109,53.21,30,21,6,1,0
-Chemistry,70,159,44.03,43,23,3,1,0
-Physics,71,159,44.65,39,24,7,1,0
-Clinical psychology,49,121,40.5,30,16,3,0,0
-Counseling and applied psychology,53,98,54.08,45,7,1,0,0
-Research and experimental psychology,65,157,41.4,41,17,7,0,0
-Anthropology,60,144,41.67,39,13,7,1,0
-Economics,70,155,45.16,44,21,4,1,0
-Political science and government,70,154,45.45,41,23,4,1,1
-Public policy analysis,66,114,57.89,47,14,5,0,0
-"Sociology, demography, and population studies",64,154,41.56,37,19,7,1,0
-Business,74,149,49.66,49,20,5,0,0
-Education leadership and administration,61,115,53.04,47,11,3,0,0
-Education research,61,111,54.95,44,14,3,0,0
-Teacher education and teaching fields,72,123,58.54,56,12,4,0,0
-"Education, other",68,122,55.74,51,14,3,0,0
-Letters,65,157,41.4,47,11,7,0,0
-Foreign languages and literature,85,150,56.67,57,23,5,0,0
-History,62,157,39.49,43,12,7,0,0
-Philosophy and religious studies,81,154,52.6,50,23,7,1,0
-Music and performing arts,78,151,51.66,57,13,8,0,0
-Communication,72,134,53.73,47,19,6,0,0
-Public administration and social services,80,122,65.57,54,21,5,0,0
+Column Name,Total Error Count,Num Entries,Error Rate (%),num_error_Total Entries,num_error_404,num_error_500,num_error_403,num_error_406,num_error_410
+Agricultural sciences,18,44,40.91,0,10,8,0,0,0
+Natural resources and conservation,45,106,42.45,0,30,12,3,0,0
+Biochemistry and biophysics,79,144,54.86,0,56,20,2,1,0
+"Biology and biomedical sciences, general",78,152,51.32,0,50,20,7,1,0
+"Bioinformatics, biostatistics, and computational biology",76,113,67.26,0,48,24,4,0,0
+"Cellular and developmental biology, and anatomy",80,127,62.99,0,58,18,3,1,0
+"Ecology, evolutionary biology, and epidemiology",88,138,63.77,0,59,25,3,1,0
+Genetics and genomics,82,133,61.65,0,53,24,4,1,0
+Microbiology and immunology,77,125,61.6,0,55,18,3,1,0
+Molecular biology,71,135,52.59,0,45,22,3,1,0
+Neurobiology and neurosciences,78,133,58.65,0,52,21,5,0,0
+Pharmacology and toxicology,55,103,53.4,0,39,15,1,0,0
+"Physiology, pathology, and cancer biology",79,113,69.91,0,59,16,4,0,0
+Computer science,70,159,44.03,0,42,22,6,0,0
+"Aerospace, aeronautical, and astronautical engineering",29,64,45.31,0,19,7,3,0,0
+Bioengineering and biomedical engineering,68,125,54.4,0,33,29,6,0,0
+Chemical and petroleum engineering,64,112,57.14,0,36,25,3,0,0
+"Civil, environmental, and transportation engineering",68,125,54.4,0,43,19,6,0,0
+Electrical and computer engineering,76,140,54.29,0,48,24,4,0,0
+Industrial engineering and operations research,35,77,45.45,0,23,8,4,0,0
+Materials and mining engineering,55,96,57.29,0,31,22,2,0,0
+Mechanical engineering,66,138,47.83,0,42,18,6,0,0
+Geological sciences,72,138,52.17,0,39,25,8,0,0
+"Ocean, marine, and atmospheric sciences",45,90,50.0,0,21,18,6,0,0
+Nursing science,49,104,47.12,0,37,9,3,0,0
+Pharmaceutical sciences,32,46,69.57,0,22,8,2,0,0
+Public health,67,119,56.3,0,46,15,6,0,0
+Applied mathematics,59,124,47.58,0,41,16,2,0,0
+Mathematics,74,160,46.25,0,52,20,2,0,0
+Statistics,75,137,54.74,0,46,24,5,0,0
+Astronomy and astrophysics,58,109,53.21,0,30,21,6,1,0
+Chemistry,70,159,44.03,0,43,23,3,1,0
+Physics,71,159,44.65,0,39,24,7,1,0
+Clinical psychology,49,121,40.5,0,30,16,3,0,0
+Counseling and applied psychology,53,98,54.08,0,45,7,1,0,0
+Research and experimental psychology,65,157,41.4,0,41,17,7,0,0
+Anthropology,60,144,41.67,0,39,13,7,1,0
+Economics,70,155,45.16,0,44,21,4,1,0
+Political science and government,70,154,45.45,0,41,23,4,1,1
+Public policy analysis,66,114,57.89,0,47,14,5,0,0
+"Sociology, demography, and population studies",64,154,41.56,0,37,19,7,1,0
+Business,74,149,49.66,0,49,20,5,0,0
+Education leadership and administration,61,115,53.04,0,47,11,3,0,0
+Education research,61,111,54.95,0,44,14,3,0,0
+Teacher education and teaching fields,72,123,58.54,0,56,12,4,0,0
+"Education, other",68,122,55.74,0,51,14,3,0,0
+Letters,65,157,41.4,0,47,11,7,0,0
+Foreign languages and literature,85,150,56.67,0,57,23,5,0,0
+History,62,157,39.49,0,43,12,7,0,0
+Philosophy and religious studies,81,154,52.6,0,50,23,7,1,0
+Music and performing arts,78,151,51.66,0,57,13,8,0,0
+Communication,72,134,53.73,0,47,19,6,0,0
+Public administration and social services,80,122,65.57,0,54,21,5,0,0
