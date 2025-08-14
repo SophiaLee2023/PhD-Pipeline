@@ -21,22 +21,18 @@ def get_status_code(url: str) -> int:
         if not all([result.scheme, result.netloc, result.path]):
             raise AttributeError
         
-        response = session.get(url, allow_redirects=True, timeout=5)
+        response = session.get(url, allow_redirects=True, timeout=10)
         return response.status_code
     
     except Exception as err:
-        # print(f'\t{err}')
         pass
     return 500
 
 def is_valid_url(url: str) -> bool:
-    result: int = get_status_code(url)
-    
-    # print(f'\tResult: {result}')
-    return result < 400
+    return get_status_code(url) < 400
 
 for index, row in df.iterrows():
-    print(f'Finished row: {index}')
+    print(f'Finished row {index}')
     
     for col, value in row.items():
         # print(f'Row: {index}, {col.title()}, {value}')
@@ -51,11 +47,14 @@ for index, row in df.iterrows():
             noted_urls: list = []
             
             for url in url_list:
-                if not is_valid_url(url):
-                    noted_urls.append('INVALID')
+                result: int = get_status_code(url)
+                
+                if result >= 400:
+                    # print(f'\tResult: {result}')
+                    noted_urls.append(f'INVALID: {result}')
                 
                 noted_urls.append(url)
             df.at[index, col] = noted_urls
     
-df.to_csv('./data/r1_universities_marked.csv', index=False)
+df.to_csv('./data/r1_universities_VVVV.csv', index=False)
 print('Data successfully written to CSV')
