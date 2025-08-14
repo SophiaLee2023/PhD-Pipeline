@@ -1,0 +1,43 @@
+import requests
+from urllib.parse import urlparse, ParseResult
+import pandas as pd
+import ast
+
+HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
+           'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+           'Accept-Language': 'en-US,en;q=0.5',
+           'Referer': 'https://www.google.com/',
+           'Connection': 'keep-alive',
+           'Upgrade-Insecure-Requests': '1'}
+
+session = requests.Session()
+session.headers.update(HEADERS)
+
+df = pd.read_csv('./data/r1_universities.csv', na_values="['NA']")
+
+def get_status_code(url: str) -> int:
+    try:
+        result: ParseResult = urlparse(url)
+        if not all([result.scheme, result.netloc, result.path]):
+            raise AttributeError
+        
+        response = session.get(url, allow_redirects=True, timeout=5)
+        return response.status_code
+    
+    except AttributeError:
+        print('\tError: Invalid link')
+    except Exception as err:
+        print(f'\t{err}')
+        
+    return False
+
+def is_valid_link(url: str) -> bool:
+    return get_status_code(url) < 400
+
+for index, row in df.iterrows():
+    for col, value in row.items():
+        print(f'Row: {index}, {col.title()}, {value}')
+        
+        if isinstance(value, str):
+            for url in ast.literal_eval(value):
+                print(f'\tResult: {get_status_code(url)}')
