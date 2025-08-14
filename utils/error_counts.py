@@ -99,9 +99,9 @@ for cname in sorted(col_error_counts, key=lambda x: col_order_map[x]):
 col_df = pd.DataFrame(col_data)
 
 # ---- Save outputs ----
-overall_df.to_csv('./data/error_counts_overall.csv', index=False)
-row_df.to_csv('./data/error_counts_by_university.csv', index=False)
-col_df.to_csv('./data/error_counts_by_subject.csv', index=False)
+overall_df.to_csv('./data/statistics/error_counts_overall.csv', index=False)
+row_df.to_csv('./data/statistics/error_counts_by_university.csv', index=False)
+col_df.to_csv('./data/statistics/error_counts_by_subject.csv', index=False)
 
 print(f"Number of filled cells (excluding first row & column): {filled_cells_count}")
 print("Saved:")
