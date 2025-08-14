@@ -56,5 +56,5 @@ for index, row in df.iterrows():
                 noted_urls.append(url)
             df.at[index, col] = noted_urls
     
-df.to_csv('./data/r1_universities_VVVV.csv', index=False)
+df.to_csv('./data/r1_universities_output.csv', index=False)
 print('Data successfully written to CSV')
