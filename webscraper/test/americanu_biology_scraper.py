@@ -33,5 +33,5 @@ for person in parser.find_all('article', class_='profile-item'):
 driver.quit()
 
 df = pd.DataFrame(data)
-df.to_csv('./data/output/americanu_biology.csv', index=False)
+df.to_csv('./data/output/test/americanu_biology.csv', index=False)
 print('Data successfully written to CSV')
