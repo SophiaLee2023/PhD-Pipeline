@@ -53,5 +53,5 @@ for menu in MENUS:
 driver.quit()
 
 df = pd.DataFrame(data)
-df.to_csv('../data/output/uchicago_polsci.csv', index=False)
+df.to_csv('./data/output/uchicago_polsci.csv', index=False)
 print('Data successfully written to CSV')
