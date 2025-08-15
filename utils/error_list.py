@@ -28,9 +28,9 @@ def export_links_by_error(output_path: str) -> None:
     df_long = pd.DataFrame(data, columns=['error', 'url'])
 
     df_wide = df_long.pivot_table(index=df_long.groupby('error').cumcount(),
-                                columns='error',
-                                values='url',
-                                aggfunc='first')
+                                  columns='error',
+                                  values='url',
+                                  aggfunc='first')
     df_wide = df_wide.reset_index(drop=True)
 
     df_wide.to_csv(output_path, index=False)
