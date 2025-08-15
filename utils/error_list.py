@@ -53,5 +53,5 @@ def display_invalid_pages(input_path: str) -> None:
 
     driver.quit()
     
-# export_errors('./data/links_by_error.csv')
-display_pages('./data/links_by_error.csv')
+# export_links_by_error('./data/links_by_error.csv')
+display_invalid_pages('./data/links_by_error.csv')
