@@ -28,7 +28,6 @@ for person in parser.find_all('article', class_='profile-item'):
         'title': title,
         'email': email,
     })
-    print(name, title, email)
 
 driver.quit()
 
