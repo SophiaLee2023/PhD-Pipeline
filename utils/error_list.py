@@ -48,8 +48,11 @@ def display_invalid_pages(input_path: str) -> None:
         for index, value in df[col].items():
             if not isinstance(value, str):
                 continue
-
-            driver.get(f'{value}#error-code:{col}')
+            
+            try:
+                driver.get(f'{value}#error-code:{col}')
+            except Exception as err:
+                print(f'{value}: {err}')
 
     driver.quit()
     
