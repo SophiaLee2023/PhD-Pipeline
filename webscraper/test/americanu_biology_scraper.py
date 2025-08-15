@@ -23,11 +23,13 @@ for person in parser.find_all('article', class_='profile-item'):
     email_tag: Tag = person.find('span', itemprop='email')
     email: str = email_tag.get_text(strip=True) if email_tag else ''
 
-    data.append({
+    entry: dict = {
         'name': name,
         'title': title,
         'email': email,
-    })
+    }
+    if entry not in data:
+        data.append(entry)
 
 driver.quit()
 
