@@ -4,7 +4,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import pandas as pd
 import ast
 
-def export_errors(output_path: str) -> None:
+def export_links_by_error(output_path: str) -> None:
     data: list = []
     df = pd.read_csv('./data/r1_universities_annotated.csv')
 
@@ -36,7 +36,7 @@ def export_errors(output_path: str) -> None:
     df_wide.to_csv(output_path, index=False)
     print('Data successfully written to CSV')
 
-def display_pages(input_path: str) -> None:
+def display_invalid_pages(input_path: str) -> None:
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     driver.set_page_load_timeout(5)
 
